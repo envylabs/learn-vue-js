@@ -1,0 +1,44 @@
+body {
+  background-color: #cceeff;
+  margin: 0;
+}
+
+.app {
+  margin-bottom: 2em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.app input {
+  border-radius: 0.25em;
+  border: none;
+  box-shadow: 0 0 0 1px #ccc;
+  font-size: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.nametag {
+  background-image: linear-gradient(red 15%, white 15%, white 85%, red 85%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 1em;
+  box-shadow: 20px 20px 60px rgba(0, 0, 255, 0.25);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  width: 20em;
+}
+
+.name {
+  font-family: "Brush Script MT", "Mistral", cursive;
+  font-size: 4em;
+  line-height: 1;
+  height: 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}

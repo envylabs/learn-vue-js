@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Learn Vue.js for Beginners 😎</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+  </head>
+  <body>
+    <!-- Vue markup -->
+    <div id="app" class="app">
+      👉 <input v-model="name" type="text" placeholder="What’s your name?" /> 👈
+      <div class="nametag">
+        Hello, my name is
+        <div class="name">{{ name }}</div>
+      </div>
+    </div>
+
+    <!-- Link to Vue framework — goes AFTER markup -->
+    <script src="../shared/js/vue.min.js"></script>
+
+    <!-- Vue app code — goes AFTER Vue link -->
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          name: 'Suzie',
+        }
+      });
+    </script>
+  </body>
+</html>
