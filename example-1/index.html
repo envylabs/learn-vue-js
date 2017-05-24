@@ -1,29 +1,21 @@
 <html>
   <head>
-    <title>Learn Vue.js for Beginners 😎</title>
+    <title>Learn Vue.js 😎</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <!-- Vue markup -->
     <div id="app" class="app">
-      👉 <input v-model="name" type="text" placeholder="What’s your name?" /> 👈
-      <div class="nametag">
+      👉 <input v-model="name" type="text" placeholder="What’s your name?" class="name-field" /> 👈
+      <div class="name-tag">
         Hello, my name is
-        <div class="name">{{ name }}</div>
+        <div class="name-show">{{ name }}</div>
       </div>
     </div>
 
-    <!-- Link to Vue framework — goes AFTER markup -->
+    <!-- Link to Vue framework — goes at end of <body> -->
     <script src="../shared/js/vue.min.js"></script>
-
-    <!-- Vue app code — goes AFTER Vue link -->
     <script>
-      new Vue({
-        el: '#app',
-        data: {
-          name: 'Suzie',
-        }
-      });
+      new Vue({ el: '#app', data: { name: 'Suzie' } });
     </script>
   </body>
 </html>
