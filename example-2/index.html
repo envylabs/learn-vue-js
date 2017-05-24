@@ -11,7 +11,7 @@
         <h1 class="card-title">New Account</h1>
         <label class="field-label" :class="{ 'is-valid': usernameIsValid, 'is-invalid': !usernameIsValid }">
           Username
-          <input v-model="username" type="text" class="field-input" autocapitalize="none" />
+          <input v-model="username" type="text" class="field-input" autocapitalize="off" />
           <div class="field-input-error"><img src="../shared/img/cross.svg"></div>
           <div class="field-input-success"><img src="../shared/img/check.svg"></div>
           <div class="field-input-focus"></div>
@@ -30,6 +30,9 @@
         <menu class="field-actions">
           <button class="field-submit">Sign Up</button>
         </menu>
+      </div>
+      <div class="instructions">
+        Enter <code>bill</code>, <code>sally</code>, <code>petunia</code>, or <code>gregory</code> to see a taken username.
       </div>
     </div>
 
@@ -77,19 +80,19 @@
             }
           },
           usernameTakenMessage: function() {
-            if (this.username.length >= 6) {
-              return '';
+            if (this.username == 'bill' || this.username == 'sally' || this.username == 'petunia' || this.username == 'gregory') {
+              return 'Username taken';
             }
             else {
-              return 'Username taken';
+              return '';
             }
           },
           usernameIsValid: function() {
-            if (this.username.length >= 6) {
-              return true;
+            if (this.username == 'bill' || this.username == 'sally' || this.username == 'petunia' || this.username == 'gregory') {
+              return false;
             }
             else {
-              return false;
+              return true;
             }
           }
         }
