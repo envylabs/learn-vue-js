@@ -46,53 +46,53 @@
           password: ''
         },
         computed: {
-          passwordStrengthMessage: function () {
-            if (this.password.length == 0) {
-              return '';
-            }
-            if (this.password.length < 6) {
-              return 'Weak';
-            }
-            else if (this.password.length < 10) {
-              return 'Decent';
-            }
-            else if (this.password.length >= 10) {
-              return 'Strong';
-            }
-          },
-          passwordStrengthPercentage: function () {
-            if (this.password.length < 6) {
-              return 0
-            }
-            else if (this.password.length < 10) {
-              return 50;
-            }
-            else {
-              return 100;
-            }
-          },
-          passwordIsValid: function() {
-            if (this.password.length >= 6) {
-              return true;
-            }
-            else {
-              return false;
-            }
-          },
-          usernameTakenMessage: function() {
-            if (this.username == 'bill' || this.username == 'sally' || this.username == 'petunia' || this.username == 'gregory') {
+          usernameTakenMessage: function () {
+            if (this.username === 'bill' || this.username === 'sally' || this.username === 'petunia' || this.username === 'gregory') {
               return 'Username taken';
             }
             else {
               return '';
             }
           },
-          usernameIsValid: function() {
-            if (this.username == 'bill' || this.username == 'sally' || this.username == 'petunia' || this.username == 'gregory') {
+          usernameIsValid: function () {
+            if (this.username === 'bill' || this.username === 'sally' || this.username === 'petunia' || this.username === 'gregory') {
               return false;
             }
             else {
               return true;
+            }
+          },
+          passwordStrengthMessage: function () {
+            if (this.password.length === 0) {
+              return '';
+            }
+            if (this.password.length >= 1 && this.password.length <= 5) {
+              return 'Weak';
+            }
+            if (this.password.length >= 6 && this.password.length <= 9) {
+              return 'Decent';
+            }
+            if (this.password.length >= 10) {
+              return 'Strong';
+            }
+          },
+          passwordStrengthPercentage: function () {
+            if (this.password.length <= 5) {
+              return 0
+            }
+            else if (this.password.length <= 9) {
+              return 50;
+            }
+            else {
+              return 100;
+            }
+          },
+          passwordIsValid: function () {
+            if (this.password.length >= 6) {
+              return true;
+            }
+            else {
+              return false;
             }
           }
         }
