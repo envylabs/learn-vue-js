@@ -100,7 +100,7 @@ body {
   outline: none;
   padding: 0.75em 0.75em;
   transition: box-shadow 200ms;
-  width: calc(100% - 32px);
+  width: 100%;
 }
 
 .field-input-error,

@@ -9,7 +9,7 @@
     <div id="app" class="app">
       <div class="card">
         <h1 class="card-title">New Account</h1>
-        <label class="field-label" :class="{ 'is-valid': usernameIsValid, 'is-invalid': !usernameIsValid }">
+        <label class="field-label" :class="{ 'is-valid': usernameIsValid, 'is-invalid': usernameIsValid === false }">
           Username
           <input v-model="username" type="text" class="field-input" autocapitalize="off" />
           <div class="field-input-error"><img src="../shared/img/cross.svg"></div>
@@ -17,7 +17,7 @@
           <div class="field-input-focus"></div>
         </label>
         <div class="field-feedback">{{ usernameTakenMessage }}</div>
-        <label class="field-label" :class="{ 'is-valid': passwordIsValid, 'is-invalid': !passwordIsValid }">
+        <label class="field-label" :class="{ 'is-valid': passwordIsValid, 'is-invalid': passwordIsValid === false }">
           Password
           <input v-model="password" type="password" class="field-input" />
           <div class="field-input-error"><img src="../shared/img/cross.svg"></div>
@@ -55,7 +55,10 @@
             }
           },
           usernameIsValid: function () {
-            if (this.username === 'bill' || this.username === 'sally' || this.username === 'petunia' || this.username === 'gregory') {
+            if (this.username.length === 0) {
+              return undefined;
+            }
+            else if (this.username === 'bill' || this.username === 'sally' || this.username === 'petunia' || this.username === 'gregory') {
               return false;
             }
             else {
@@ -88,7 +91,10 @@
             }
           },
           passwordIsValid: function () {
-            if (this.password.length >= 6) {
+            if (this.password.length === 0) {
+              return undefined;
+            }
+            else if (this.password.length >= 6) {
               return true;
             }
             else {
